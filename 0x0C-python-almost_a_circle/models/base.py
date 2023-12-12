@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines a base model class.
+Define a base model class.
 """
 import json
 import csv
@@ -8,7 +8,7 @@ import turtle
 
 class Base:
     """
-    Represents the base model
+    Represent the base model
     """
     __nb_objects = 0
     def __init__(self, id=None):

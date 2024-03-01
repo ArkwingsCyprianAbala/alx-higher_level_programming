@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-#fetching urls
-import urllib.request
+"""Fetches https://alx-intranet.hbtn.io/status."""
+from urllib.request import urlopen
 
-req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
-with urllib.request.urlopen(req) as response:
-   the_page = response.read().decode('utf-8')
-
-for line in the_page.splitlines():
-    print(f"- {line}")
+if __name__ == "__main__":
+    url = 'https://alx-intranet.hbtn.io/status'
+    with urlopen(url) as response:
+        html_bytes = response.read()
+        html = html_bytes.decode()
+        print("- " + html.replace("\n", "\n\t-"))
